@@ -223,7 +223,7 @@ export const models = {
     releaseDate: "2023-11-06",
     lastUpdated: "2023-11-06",
     modalities: { input: ["audio"], output: ["text"] },
-    limit: { context: 448, output: 4096 },
+    limit: { context: 448, output: 448 },
     cost: { input: 0.0023, output: 0.0023, outputAudio: 2.3 },
   },
   "openai/whisper-large-v3-turbo": {

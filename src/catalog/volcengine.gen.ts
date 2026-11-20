@@ -193,7 +193,7 @@ export const models = {
     releaseDate: "2026-06-23",
     lastUpdated: "2026-06-23",
     modalities: { input: ["text", "image", "video"], output: ["text"] },
-    limit: { context: 256000, output: 256000 },
+    limit: { context: 1024000, output: 256000 },
     cost: { input: 0.8906, output: 4.45301, cacheRead: 0.17812 },
   },
   "doubao-seed-2-1-turbo-260628": {
@@ -241,7 +241,7 @@ export const models = {
     releaseDate: "2026-06-23",
     lastUpdated: "2026-06-23",
     modalities: { input: ["text", "image", "video"], output: ["text"] },
-    limit: { context: 256000, output: 256000 },
+    limit: { context: 1024000, output: 256000 },
     cost: { input: 0.8906, output: 4.45301, cacheRead: 0.17812 },
   },
   "glm-5-2-260617": {

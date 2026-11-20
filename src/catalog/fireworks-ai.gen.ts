@@ -107,7 +107,7 @@ export const models = {
     releaseDate: "2026-07-16",
     lastUpdated: "2026-07-16",
     modalities: { input: ["text", "image"], output: ["text"] },
-    limit: { context: 1048576, output: 131072 },
+    limit: { context: 1048576, output: 1048576 },
     cost: { input: 3, output: 15, cacheRead: 0.3 },
   },
   "accounts/fireworks/models/kimi-k3p1-pro": {
@@ -123,7 +123,7 @@ export const models = {
     releaseDate: "2026-10-23",
     lastUpdated: "2026-10-23",
     modalities: { input: ["text", "image"], output: ["text"] },
-    limit: { context: 1048576, output: 131072 },
+    limit: { context: 1048576, output: 1048576 },
     cost: { input: 2, output: 10, cacheRead: 0.2 },
   },
   "accounts/fireworks/models/minimax-m3": {
@@ -239,7 +239,7 @@ export const models = {
     lastUpdated: "2026-10-17",
     modalities: { input: ["text", "image"], output: ["text"] },
     limit: { context: 1000000, output: 384000 },
-    cost: { input: 0.21, output: 0.84, cacheRead: 0.0042 },
+    cost: { input: 0.15, output: 0.6, cacheRead: 0.003 },
   },
   "accounts/fireworks/routers/deepseek-v4p1-flash-1017-ultrafast": {
     id: "accounts/fireworks/routers/deepseek-v4p1-flash-1017-ultrafast",
@@ -256,7 +256,7 @@ export const models = {
     lastUpdated: "2026-10-17",
     modalities: { input: ["text", "image"], output: ["text"] },
     limit: { context: 1000000, output: 384000 },
-    cost: { input: 2.4, output: 9.6, cacheRead: 0.048 },
+    cost: { input: 1.2, output: 4.8, cacheRead: 0.024 },
   },
   "accounts/fireworks/routers/deepseek-v4p1-flash-spot": {
     id: "accounts/fireworks/routers/deepseek-v4p1-flash-spot",
@@ -273,7 +273,7 @@ export const models = {
     lastUpdated: "2026-09-10",
     modalities: { input: ["text", "image"], output: ["text"] },
     limit: { context: 1000000, output: 384000 },
-    cost: { input: 0.21, output: 0.84, cacheRead: 0.0042 },
+    cost: { input: 0.15, output: 0.6, cacheRead: 0.003 },
   },
   "accounts/fireworks/routers/glm-5p3-fast": {
     id: "accounts/fireworks/routers/glm-5p3-fast",
@@ -305,7 +305,7 @@ export const models = {
     lastUpdated: "2026-08-14",
     modalities: { input: ["text"], output: ["text"] },
     limit: { context: 1048573, output: 262144 },
-    cost: { input: 0.98, output: 3.08, cacheRead: 0.182 },
+    cost: { input: 0.7, output: 2.2, cacheRead: 0.13 },
   },
   "accounts/fireworks/routers/glm-fast-latest": {
     id: "accounts/fireworks/routers/glm-fast-latest",
@@ -368,7 +368,7 @@ export const models = {
     releaseDate: "2026-07-16",
     lastUpdated: "2026-07-16",
     modalities: { input: ["text", "image"], output: ["text"] },
-    limit: { context: 1048576, output: 131072 },
+    limit: { context: 1048576, output: 1048576 },
     cost: { input: 4.5, output: 22.5, cacheRead: 0.45 },
   },
   "accounts/fireworks/routers/kimi-k3-fast": {
@@ -384,7 +384,7 @@ export const models = {
     releaseDate: "2026-07-16",
     lastUpdated: "2026-07-16",
     modalities: { input: ["text", "image"], output: ["text"] },
-    limit: { context: 1048576, output: 131072 },
+    limit: { context: 1048576, output: 1048576 },
     cost: { input: 4.5, output: 22.5, cacheRead: 0.45 },
   },
   "accounts/fireworks/routers/kimi-k3-spot": {
@@ -400,7 +400,7 @@ export const models = {
     releaseDate: "2026-07-16",
     lastUpdated: "2026-07-16",
     modalities: { input: ["text", "image"], output: ["text"] },
-    limit: { context: 1048576, output: 131072 },
+    limit: { context: 1048576, output: 1048576 },
     cost: { input: 2.1, output: 10.5, cacheRead: 0.21 },
   },
   "accounts/fireworks/routers/kimi-latest": {
@@ -416,8 +416,8 @@ export const models = {
     releaseDate: "2026-07-16",
     lastUpdated: "2026-07-16",
     modalities: { input: ["text", "image"], output: ["text"] },
-    limit: { context: 1048576, output: 131072 },
-    cost: { input: 3, output: 15, cacheRead: 0.3 },
+    limit: { context: 1048576, output: 1048576 },
+    cost: { input: 2, output: 10, cacheRead: 0.2 },
   },
   "accounts/fireworks/routers/minimax-latest": {
     id: "accounts/fireworks/routers/minimax-latest",

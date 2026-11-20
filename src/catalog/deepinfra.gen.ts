@@ -439,6 +439,22 @@ export const models = {
     limit: { context: 256000, output: 131072 },
     cost: { input: 1.65, output: 4.951, cacheRead: 0.206 },
   },
+  "Qwen/Qwen4-Max": {
+    id: "Qwen/Qwen4-Max",
+    name: "Qwen4 Max",
+    family: "qwen",
+    attachment: true,
+    reasoning: true,
+    toolCall: true,
+    structuredOutput: true,
+    temperature: true,
+    openWeights: false,
+    releaseDate: "2026-11-16",
+    lastUpdated: "2026-11-16",
+    modalities: { input: ["text", "image", "video"], output: ["text"] },
+    limit: { context: 1000000, output: 262144 },
+    cost: { input: 1.413, output: 4.24, cacheRead: 0.071 },
+  },
   "XiaomiMiMo/MiMo-V2.5": {
     id: "XiaomiMiMo/MiMo-V2.5",
     name: "MiMo-V2.5",
@@ -975,7 +991,7 @@ export const models = {
     releaseDate: "2026-07-16",
     lastUpdated: "2026-07-16",
     modalities: { input: ["text", "image"], output: ["text"] },
-    limit: { context: 1048576, output: 131072 },
+    limit: { context: 1048576, output: 1048576 },
     cost: { input: 2.85, output: 14.25, cacheRead: 0.285, cacheWrite: 3.5625 },
   },
   "moonshotai/Kimi-K3.1-Pro": {
@@ -1060,7 +1076,7 @@ export const models = {
     lastUpdated: "2025-08-05",
     modalities: { input: ["text"], output: ["text"] },
     limit: { context: 131072, output: 16384 },
-    cost: { input: 0.037, output: 0.17 },
+    cost: { input: 0.037, output: 0.17, cacheRead: 0.0185 },
   },
   "openai/gpt-oss-20b": {
     id: "openai/gpt-oss-20b",
@@ -1077,7 +1093,7 @@ export const models = {
     lastUpdated: "2025-08-05",
     modalities: { input: ["text"], output: ["text"] },
     limit: { context: 131072, output: 16384 },
-    cost: { input: 0.03, output: 0.14 },
+    cost: { input: 0.03, output: 0.14, cacheRead: 0.015 },
   },
   "stepfun-ai/Step-3.7-Flash": {
     id: "stepfun-ai/Step-3.7-Flash",
@@ -1158,8 +1174,24 @@ export const models = {
     lastUpdated: "2026-07-15",
     status: "deprecated",
     modalities: { input: ["text", "image", "audio"], output: ["text"] },
-    limit: { context: 524288, output: 1048576 },
+    limit: { context: 524288, output: 524288 },
     cost: { input: 0.95, output: 4.05, cacheRead: 0.16 },
+  },
+  "thinkingmachines/Inkling-2-Small": {
+    id: "thinkingmachines/Inkling-2-Small",
+    name: "Inkling 2 Small",
+    family: "ling",
+    attachment: true,
+    reasoning: true,
+    toolCall: true,
+    structuredOutput: true,
+    temperature: true,
+    openWeights: true,
+    releaseDate: "2026-11-05",
+    lastUpdated: "2026-11-12",
+    modalities: { input: ["text", "image"], output: ["text"] },
+    limit: { context: 1048576, output: 131072 },
+    cost: { input: 0.3, output: 1, cacheRead: 0.03 },
   },
   "thinkingmachines/Inkling-Small": {
     id: "thinkingmachines/Inkling-Small",
@@ -1174,7 +1206,7 @@ export const models = {
     releaseDate: "2026-07-30",
     lastUpdated: "2026-07-30",
     modalities: { input: ["text", "image", "audio"], output: ["text"] },
-    limit: { context: 524288, output: 1048576 },
+    limit: { context: 524288, output: 524288 },
     cost: { input: 0.45, output: 1.2, cacheRead: 0.1 },
   },
   "zai-org/GLM-4.6": {
@@ -1316,7 +1348,7 @@ export const models = {
 } as const satisfies Record<string, ModelInfo>;
 
 export type DeepinfraModelId = keyof typeof models;
-export type DeepinfraTextModelId = "ByteDance/Seed-2.0-code" | "ByteDance/Seed-2.0-mini" | "ByteDance/Seed-2.0-pro" | "MiniMaxAI/MiniMax-M2.5" | "MiniMaxAI/MiniMax-M2.7" | "MiniMaxAI/MiniMax-M3" | "Qwen/Qwen3-235B-A22B-Instruct-2507" | "Qwen/Qwen3-30B-A3B" | "Qwen/Qwen3-32B" | "Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo" | "Qwen/Qwen3-Max" | "Qwen/Qwen3-Next-80B-A3B-Instruct" | "Qwen/Qwen3-VL-235B-A22B-Instruct" | "Qwen/Qwen3-VL-30B-A3B-Instruct" | "Qwen/Qwen3.5-122B-A10B" | "Qwen/Qwen3.5-27B" | "Qwen/Qwen3.5-35B-A3B" | "Qwen/Qwen3.5-397B-A17B" | "Qwen/Qwen3.5-9B" | "Qwen/Qwen3.6-27B" | "Qwen/Qwen3.6-35B-A3B" | "Qwen/Qwen3.7-Max" | "Qwen/Qwen3.8-2.4T-A95B" | "Qwen/Qwen3.8-27B" | "Qwen/Qwen3.8-Flash" | "Qwen/Qwen3.8-Max" | "XiaomiMiMo/MiMo-V2.5" | "XiaomiMiMo/MiMo-V2.5-Pro" | "XiaomiMiMo/MiMo-V2.6-Flash" | "XiaomiMiMo/MiMo-V2.6-Pro" | "anthropic/claude-fable-5" | "deepseek-ai/DeepSeek-R1-0528" | "deepseek-ai/DeepSeek-V3" | "deepseek-ai/DeepSeek-V3-0324" | "deepseek-ai/DeepSeek-V3.1" | "deepseek-ai/DeepSeek-V3.2" | "deepseek-ai/DeepSeek-V4-Flash" | "deepseek-ai/DeepSeek-V4-Flash-0731" | "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp" | "deepseek-ai/DeepSeek-V4-Pro" | "deepseek-ai/DeepSeek-V4-Pro-0813" | "deepseek-ai/DeepSeek-V4.1-Flash" | "deepseek-ai/DeepSeek-V4.1-Flash-1017" | "google/gemma-3-12b-it" | "google/gemma-3-27b-it" | "google/gemma-3-4b-it" | "google/gemma-4-26B-A4B-it" | "google/gemma-4-31B-it" | "google/gemma-4-E4B-it" | "meta-llama/Llama-3.3-70B-Instruct-Turbo" | "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8" | "meta-llama/Llama-4-Scout-17B-16E-Instruct" | "meta-llama/Llama-Guard-4-12B" | "mistralai/Mistral-Small-24B-Instruct-2501" | "moonshotai/Kimi-K2.5" | "moonshotai/Kimi-K2.6" | "moonshotai/Kimi-K2.7-Code" | "moonshotai/Kimi-K3" | "moonshotai/Kimi-K3.1-Pro" | "nvidia/Llama-3.3-Nemotron-Super-49B-v1.5" | "nvidia/Nemotron-3-Nano-30B-A3B" | "nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning" | "openai/gpt-oss-120b" | "openai/gpt-oss-20b" | "stepfun-ai/Step-3.7-Flash" | "stepfun-ai/Step-5-Preview" | "tencent/Hy3" | "tencent/Hy4-preview" | "thinkingmachines/Inkling" | "thinkingmachines/Inkling-Small" | "zai-org/GLM-4.6" | "zai-org/GLM-4.7" | "zai-org/GLM-4.7-Flash" | "zai-org/GLM-5" | "zai-org/GLM-5.1" | "zai-org/GLM-5.2" | "zai-org/GLM-5.3" | "zai-org/GLM-5.3-Flash";
+export type DeepinfraTextModelId = "ByteDance/Seed-2.0-code" | "ByteDance/Seed-2.0-mini" | "ByteDance/Seed-2.0-pro" | "MiniMaxAI/MiniMax-M2.5" | "MiniMaxAI/MiniMax-M2.7" | "MiniMaxAI/MiniMax-M3" | "Qwen/Qwen3-235B-A22B-Instruct-2507" | "Qwen/Qwen3-30B-A3B" | "Qwen/Qwen3-32B" | "Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo" | "Qwen/Qwen3-Max" | "Qwen/Qwen3-Next-80B-A3B-Instruct" | "Qwen/Qwen3-VL-235B-A22B-Instruct" | "Qwen/Qwen3-VL-30B-A3B-Instruct" | "Qwen/Qwen3.5-122B-A10B" | "Qwen/Qwen3.5-27B" | "Qwen/Qwen3.5-35B-A3B" | "Qwen/Qwen3.5-397B-A17B" | "Qwen/Qwen3.5-9B" | "Qwen/Qwen3.6-27B" | "Qwen/Qwen3.6-35B-A3B" | "Qwen/Qwen3.7-Max" | "Qwen/Qwen3.8-2.4T-A95B" | "Qwen/Qwen3.8-27B" | "Qwen/Qwen3.8-Flash" | "Qwen/Qwen3.8-Max" | "Qwen/Qwen4-Max" | "XiaomiMiMo/MiMo-V2.5" | "XiaomiMiMo/MiMo-V2.5-Pro" | "XiaomiMiMo/MiMo-V2.6-Flash" | "XiaomiMiMo/MiMo-V2.6-Pro" | "anthropic/claude-fable-5" | "deepseek-ai/DeepSeek-R1-0528" | "deepseek-ai/DeepSeek-V3" | "deepseek-ai/DeepSeek-V3-0324" | "deepseek-ai/DeepSeek-V3.1" | "deepseek-ai/DeepSeek-V3.2" | "deepseek-ai/DeepSeek-V4-Flash" | "deepseek-ai/DeepSeek-V4-Flash-0731" | "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp" | "deepseek-ai/DeepSeek-V4-Pro" | "deepseek-ai/DeepSeek-V4-Pro-0813" | "deepseek-ai/DeepSeek-V4.1-Flash" | "deepseek-ai/DeepSeek-V4.1-Flash-1017" | "google/gemma-3-12b-it" | "google/gemma-3-27b-it" | "google/gemma-3-4b-it" | "google/gemma-4-26B-A4B-it" | "google/gemma-4-31B-it" | "google/gemma-4-E4B-it" | "meta-llama/Llama-3.3-70B-Instruct-Turbo" | "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8" | "meta-llama/Llama-4-Scout-17B-16E-Instruct" | "meta-llama/Llama-Guard-4-12B" | "mistralai/Mistral-Small-24B-Instruct-2501" | "moonshotai/Kimi-K2.5" | "moonshotai/Kimi-K2.6" | "moonshotai/Kimi-K2.7-Code" | "moonshotai/Kimi-K3" | "moonshotai/Kimi-K3.1-Pro" | "nvidia/Llama-3.3-Nemotron-Super-49B-v1.5" | "nvidia/Nemotron-3-Nano-30B-A3B" | "nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning" | "openai/gpt-oss-120b" | "openai/gpt-oss-20b" | "stepfun-ai/Step-3.7-Flash" | "stepfun-ai/Step-5-Preview" | "tencent/Hy3" | "tencent/Hy4-preview" | "thinkingmachines/Inkling" | "thinkingmachines/Inkling-2-Small" | "thinkingmachines/Inkling-Small" | "zai-org/GLM-4.6" | "zai-org/GLM-4.7" | "zai-org/GLM-4.7-Flash" | "zai-org/GLM-5" | "zai-org/GLM-5.1" | "zai-org/GLM-5.2" | "zai-org/GLM-5.3" | "zai-org/GLM-5.3-Flash";
 export type DeepinfraImageModelId = never;
 export type DeepinfraAudioModelId = never;
 export type DeepinfraVideoModelId = never;

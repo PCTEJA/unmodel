@@ -116,7 +116,7 @@ export const models = {
     lastUpdated: "2026-07-16",
     status: "beta",
     modalities: { input: ["text"], output: ["text"] },
-    limit: { context: 1048576, output: 131072 },
+    limit: { context: 1048576, output: 1048576 },
     cost: { input: 3, output: 15, cacheRead: 0.3 },
   },
   "thinkingmachines/inkling-small": {

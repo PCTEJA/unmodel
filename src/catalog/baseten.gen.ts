@@ -143,7 +143,7 @@ export const models = {
     releaseDate: "2026-10-23",
     lastUpdated: "2026-10-23",
     modalities: { input: ["text", "image"], output: ["text"] },
-    limit: { context: 1000000, output: 262144 },
+    limit: { context: 1048576, output: 262144 },
     cost: { input: 2, output: 10, cacheRead: 0.2 },
   },
   "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B": {

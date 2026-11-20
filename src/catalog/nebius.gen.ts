@@ -59,7 +59,7 @@ export const models = {
     lastUpdated: "2025-08-26",
     modalities: { input: ["text"], output: ["text"] },
     limit: { context: 131072, output: 8192, input: 120000 },
-    cost: { input: 1, output: 3, cacheRead: 1, reasoning: 3 },
+    cost: { input: 1, output: 3, cacheRead: 0.2, reasoning: 3 },
   },
   "Qwen/Qwen3-235B-A22B-Instruct-2507": {
     id: "Qwen/Qwen3-235B-A22B-Instruct-2507",
@@ -175,7 +175,7 @@ export const models = {
     lastUpdated: "2025-03-12",
     modalities: { input: ["text", "image"], output: ["text"] },
     limit: { context: 110000, output: 8192, input: 100000 },
-    cost: { input: 0.1, output: 0.3, cacheRead: 0.1 },
+    cost: { input: 0.1, output: 0.3, cacheRead: 0.04 },
   },
   "meta-models/muse-spark-open": {
     id: "meta-models/muse-spark-open",
@@ -209,6 +209,22 @@ export const models = {
     modalities: { input: ["text", "image"], output: ["text"] },
     limit: { context: 1024000, output: 8000 },
     cost: { input: 3, output: 15, cacheRead: 0.3 },
+  },
+  "moonshotai/Kimi-K3.1-Pro": {
+    id: "moonshotai/Kimi-K3.1-Pro",
+    name: "Kimi K3.1 Pro",
+    family: "kimi-k3",
+    attachment: true,
+    reasoning: true,
+    toolCall: true,
+    structuredOutput: true,
+    temperature: true,
+    openWeights: true,
+    releaseDate: "2026-10-23",
+    lastUpdated: "2026-10-23",
+    modalities: { input: ["text", "image"], output: ["text"] },
+    limit: { context: 1048576, output: 1048576 },
+    cost: { input: 2, output: 10, cacheRead: 0.2 },
   },
   "nvidia/Nemotron-3-Ultra-550b-a55b": {
     id: "nvidia/Nemotron-3-Ultra-550b-a55b",
@@ -257,7 +273,7 @@ export const models = {
     lastUpdated: "2026-08-11",
     modalities: { input: ["text"], output: ["text"] },
     limit: { context: 1048576, output: 1048576 },
-    cost: { input: 0.06, output: 0.24, cacheRead: 0.06 },
+    cost: { input: 0.06, output: 0.24, cacheRead: 0.03 },
   },
   "nvidia/nemotron-3-super-120b-a12b": {
     id: "nvidia/nemotron-3-super-120b-a12b",
@@ -291,7 +307,7 @@ export const models = {
     lastUpdated: "2025-08-05",
     modalities: { input: ["text"], output: ["text"] },
     limit: { context: 131072, output: 8192, input: 124000 },
-    cost: { input: 0.15, output: 0.6, cacheRead: 0.15, reasoning: 0.6 },
+    cost: { input: 0.15, output: 0.6, cacheRead: 0.1, reasoning: 0.6 },
   },
   "reflection/beam": {
     id: "reflection/beam",
@@ -309,6 +325,22 @@ export const models = {
     modalities: { input: ["text"], output: ["text"] },
     limit: { context: 1048576, output: 131072 },
     cost: { input: 0.25, output: 1, cacheRead: 0.05 },
+  },
+  "thinkingmachines/Inkling-2-Small": {
+    id: "thinkingmachines/Inkling-2-Small",
+    name: "Inkling 2 Small",
+    family: "ling",
+    attachment: true,
+    reasoning: true,
+    toolCall: true,
+    structuredOutput: true,
+    temperature: true,
+    openWeights: true,
+    releaseDate: "2026-11-05",
+    lastUpdated: "2026-11-12",
+    modalities: { input: ["text", "image"], output: ["text"] },
+    limit: { context: 1048576, output: 1048576 },
+    cost: { input: 0.3, output: 1, cacheRead: 0.06 },
   },
   "zai-org/GLM-5.2": {
     id: "zai-org/GLM-5.2",
@@ -361,7 +393,7 @@ export const models = {
 } as const satisfies Record<string, ModelInfo>;
 
 export type NebiusModelId = keyof typeof models;
-export type NebiusTextModelId = "MiniMaxAI/MiniMax-M3" | "MiniMaxAI/MiniMax-M3.1-Flash" | "NousResearch/Hermes-4-405B" | "Qwen/Qwen3-235B-A22B-Instruct-2507" | "Qwen/Qwen3-30B-A3B-Instruct-2507" | "Qwen/Qwen3-Embedding-8B" | "Qwen/Qwen3.8-27B" | "deepseek-ai/DeepSeek-V4-Pro-0813" | "deepseek-ai/DeepSeek-V4.1-Flash-1017" | "google/gemma-3-27b-it" | "meta-models/muse-spark-open" | "moonshotai/Kimi-K3" | "nvidia/Nemotron-3-Ultra-550b-a55b" | "nvidia/Nemotron-3.5-Super-VL" | "nvidia/Nemotron-3_5-Lightning" | "nvidia/nemotron-3-super-120b-a12b" | "openai/gpt-oss-120b" | "reflection/beam" | "zai-org/GLM-5.2" | "zai-org/GLM-5.3" | "zai-org/GLM-5.3-Flash";
+export type NebiusTextModelId = "MiniMaxAI/MiniMax-M3" | "MiniMaxAI/MiniMax-M3.1-Flash" | "NousResearch/Hermes-4-405B" | "Qwen/Qwen3-235B-A22B-Instruct-2507" | "Qwen/Qwen3-30B-A3B-Instruct-2507" | "Qwen/Qwen3-Embedding-8B" | "Qwen/Qwen3.8-27B" | "deepseek-ai/DeepSeek-V4-Pro-0813" | "deepseek-ai/DeepSeek-V4.1-Flash-1017" | "google/gemma-3-27b-it" | "meta-models/muse-spark-open" | "moonshotai/Kimi-K3" | "moonshotai/Kimi-K3.1-Pro" | "nvidia/Nemotron-3-Ultra-550b-a55b" | "nvidia/Nemotron-3.5-Super-VL" | "nvidia/Nemotron-3_5-Lightning" | "nvidia/nemotron-3-super-120b-a12b" | "openai/gpt-oss-120b" | "reflection/beam" | "thinkingmachines/Inkling-2-Small" | "zai-org/GLM-5.2" | "zai-org/GLM-5.3" | "zai-org/GLM-5.3-Flash";
 export type NebiusImageModelId = never;
 export type NebiusAudioModelId = never;
 export type NebiusVideoModelId = never;

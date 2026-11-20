@@ -128,7 +128,7 @@ export const models = {
     releaseDate: "2025-08-05",
     lastUpdated: "2025-08-05",
     modalities: { input: ["text"], output: ["text"] },
-    limit: { context: 128000, output: 32768 },
+    limit: { context: 128000, output: 128000 },
     cost: { input: 0.168225, output: 0.6729 },
   },
   "lightonocr-3-0.8b": {

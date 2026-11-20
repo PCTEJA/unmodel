@@ -282,7 +282,7 @@ export const models = {
     releaseDate: "2025-07-02",
     lastUpdated: "2025-07-02",
     modalities: { input: ["text"], output: ["text"] },
-    limit: { context: 130000, output: 163840 },
+    limit: { context: 130000, output: 130000 },
     cost: { input: 0.3, output: 1.2 },
   },
   "deepseek-v3": {
@@ -586,7 +586,7 @@ export const models = {
     releaseDate: "2025-08-07",
     lastUpdated: "2025-08-07",
     modalities: { input: ["text", "image"], output: ["text"] },
-    limit: { context: 128000, output: 16384, input: 272000 },
+    limit: { context: 128000, output: 16384 },
     cost: { input: 1.25, output: 10, cacheRead: 0.125 },
   },
   "gpt-5-codex": {
@@ -650,7 +650,7 @@ export const models = {
     releaseDate: "2025-10-06",
     lastUpdated: "2025-10-06",
     modalities: { input: ["text"], output: ["text"] },
-    limit: { context: 128000, output: 32768, input: 272000 },
+    limit: { context: 128000, output: 32768 },
     cost: { input: 15, output: 120 },
   },
   "gpt-5.1": {
@@ -938,7 +938,7 @@ export const models = {
     releaseDate: "2025-11-06",
     lastUpdated: "2025-11-06",
     modalities: { input: ["text"], output: ["text"] },
-    limit: { context: 256000, output: 262144 },
+    limit: { context: 256000, output: 256000 },
     cost: { input: 0.48, output: 2 },
   },
   "llama-3.1-8b-instant": {

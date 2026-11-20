@@ -126,22 +126,6 @@ export const models = {
     limit: { context: 500000, output: 500000 },
     cost: { input: 2, output: 6, cacheRead: 0.5 },
   },
-  "grok-build-0.1": {
-    id: "grok-build-0.1",
-    name: "Grok Build 0.1",
-    family: "grok-build",
-    attachment: true,
-    reasoning: true,
-    toolCall: true,
-    structuredOutput: true,
-    temperature: true,
-    openWeights: false,
-    releaseDate: "2026-04-16",
-    lastUpdated: "2026-04-16",
-    modalities: { input: ["text", "image", "pdf"], output: ["text"] },
-    limit: { context: 256000, output: 256000 },
-    cost: { input: 1, output: 2, cacheRead: 0.2 },
-  },
   "grok-imagine-image": {
     id: "grok-imagine-image",
     name: "Grok Imagine Image",
@@ -201,7 +185,7 @@ export const models = {
 } as const satisfies Record<string, ModelInfo>;
 
 export type XaiModelId = keyof typeof models;
-export type XaiTextModelId = "grok-4.20-0309-non-reasoning" | "grok-4.20-0309-reasoning" | "grok-4.20-multi-agent-0309" | "grok-4.3" | "grok-4.5" | "grok-4.6" | "grok-4.7" | "grok-build-0.1";
+export type XaiTextModelId = "grok-4.20-0309-non-reasoning" | "grok-4.20-0309-reasoning" | "grok-4.20-multi-agent-0309" | "grok-4.3" | "grok-4.5" | "grok-4.6" | "grok-4.7";
 export type XaiImageModelId = "grok-imagine-image";
 export type XaiAudioModelId = never;
 export type XaiVideoModelId = "grok-imagine-video" | "grok-imagine-video-1.5" | "grok-imagine-video-1.5-lite";

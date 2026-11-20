@@ -339,7 +339,7 @@ export const models = {
     lastUpdated: "2026-07-16",
     status: "deprecated",
     modalities: { input: ["text", "image", "video"], output: ["text"] },
-    limit: { context: 1048576, output: 131072 },
+    limit: { context: 1048576, output: 1048576 },
     cost: { input: 0, output: 0 },
   },
   "nvidia/active-speaker-detection": {
@@ -715,7 +715,7 @@ export const models = {
     releaseDate: "2025-08-05",
     lastUpdated: "2025-08-05",
     modalities: { input: ["text"], output: ["text"] },
-    limit: { context: 131072, output: 32768 },
+    limit: { context: 131072, output: 131072 },
     cost: { input: 0, output: 0 },
   },
   "openai/whisper-large-v3": {
@@ -731,7 +731,7 @@ export const models = {
     releaseDate: "2023-11-06",
     lastUpdated: "2023-11-06",
     modalities: { input: ["audio"], output: ["text"] },
-    limit: { context: 448, output: 4096 },
+    limit: { context: 448, output: 448 },
     cost: { input: 0, output: 0 },
   },
   "poolside/laguna-xs-2.1": {

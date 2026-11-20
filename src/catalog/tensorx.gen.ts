@@ -212,7 +212,7 @@ export const models = {
     releaseDate: "2026-07-16",
     lastUpdated: "2026-07-16",
     modalities: { input: ["text", "image", "video"], output: ["text"] },
-    limit: { context: 1048576, output: 131072 },
+    limit: { context: 1048576, output: 1048576 },
     cost: { input: 3, output: 15, cacheRead: 0.75 },
   },
   "qwen/qwen3-235b-a22b-2507": {
@@ -229,7 +229,7 @@ export const models = {
     lastUpdated: "2025-07-21",
     status: "deprecated",
     modalities: { input: ["text"], output: ["text"] },
-    limit: { context: 131000, output: 262144 },
+    limit: { context: 131000, output: 131000 },
     cost: { input: 0.072, output: 0.464, cacheRead: 0.018, cacheWrite: 0.09 },
   },
   "qwen/qwen3.5-122b-a10b": {

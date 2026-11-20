@@ -106,7 +106,7 @@ export const models = {
     releaseDate: "2025-08-05",
     lastUpdated: "2025-08-05",
     modalities: { input: ["text"], output: ["text"] },
-    limit: { context: 128000, output: 32768 },
+    limit: { context: 128000, output: 128000 },
     cost: { input: 0.2311, output: 0.7511, cacheRead: 0.0462 },
   },
   "kimi-k2.6": {
@@ -124,7 +124,7 @@ export const models = {
     lastUpdated: "2026-04-20",
     status: "deprecated",
     modalities: { input: ["text", "image"], output: ["text"] },
-    limit: { context: 256000, output: 262144 },
+    limit: { context: 256000, output: 256000 },
     cost: { input: 1.791, output: 8.9436, cacheRead: 0.1733 },
   },
   "kimi-latest": {
@@ -142,7 +142,7 @@ export const models = {
     lastUpdated: "2026-04-20",
     status: "deprecated",
     modalities: { input: ["text", "image"], output: ["text"] },
-    limit: { context: 256000, output: 262144 },
+    limit: { context: 256000, output: 256000 },
     cost: { input: 1.791, output: 8.9436, cacheRead: 0.1733 },
   },
   "qwen3-embedding-4b": {
@@ -190,7 +190,7 @@ export const models = {
     releaseDate: "2023-11-06",
     lastUpdated: "2023-11-06",
     modalities: { input: ["audio"], output: ["text"] },
-    limit: { context: 448, output: 4096 },
+    limit: { context: 448, output: 448 },
     cost: { input: 0.01618, output: 0 },
   },
 } as const satisfies Record<string, ModelInfo>;

@@ -92,7 +92,7 @@ export const models = {
     status: "deprecated",
     modalities: { input: ["text", "image"], output: ["text", "image"] },
     limit: { context: 32768, output: 32768 },
-    cost: { input: 0.3, output: 30, cacheRead: 0.075 },
+    cost: { input: 0.3, output: 2.5, cacheRead: 0.075 },
   },
   "gemini-2.5-flash-lite": {
     id: "gemini-2.5-flash-lite",
@@ -191,7 +191,7 @@ export const models = {
     lastUpdated: "2026-05-28",
     modalities: { input: ["text", "image"], output: ["text", "image"] },
     limit: { context: 65536, output: 32768 },
-    cost: { input: 2, output: 120 },
+    cost: { input: 2, output: 12 },
   },
   "gemini-3.1-flash-image": {
     id: "gemini-3.1-flash-image",
@@ -207,7 +207,7 @@ export const models = {
     lastUpdated: "2026-05-28",
     modalities: { input: ["text", "image", "video", "pdf"], output: ["text", "image"] },
     limit: { context: 131072, output: 32768 },
-    cost: { input: 0.5, output: 60 },
+    cost: { input: 0.5, output: 3 },
   },
   "gemini-3.1-flash-lite": {
     id: "gemini-3.1-flash-lite",
@@ -241,7 +241,7 @@ export const models = {
     lastUpdated: "2026-06-30",
     modalities: { input: ["text", "image"], output: ["text", "image"] },
     limit: { context: 65536, output: 4096 },
-    cost: { input: 0.25, output: 30 },
+    cost: { input: 0.25, output: 1.5 },
   },
   "gemini-3.1-flash-lite-preview": {
     id: "gemini-3.1-flash-lite-preview",
@@ -375,7 +375,7 @@ export const models = {
     releaseDate: "2026-06-09",
     lastUpdated: "2026-06-09",
     modalities: { input: ["audio"], output: ["audio", "text"] },
-    limit: { context: 16384, output: 32768 },
+    limit: { context: 16384, output: 16384 },
     cost: { input: 3.5, output: 21, inputAudio: 3.5, outputAudio: 21 },
   },
   "gemini-3.6-flash": {
@@ -478,6 +478,23 @@ export const models = {
     modalities: { input: ["text", "image", "video", "audio", "pdf"], output: ["text"] },
     limit: { context: 1048576, output: 65536 },
     cost: { input: 1.5, output: 7.5, cacheRead: 0.075, inputAudio: 1.5 },
+  },
+  "gemini-4-neon": {
+    id: "gemini-4-neon",
+    name: "Gemini 4 Neon",
+    family: "gemini",
+    attachment: true,
+    reasoning: true,
+    toolCall: true,
+    structuredOutput: true,
+    temperature: true,
+    openWeights: false,
+    knowledge: "2026-03",
+    releaseDate: "2026-11-18",
+    lastUpdated: "2026-11-18",
+    modalities: { input: ["text", "image", "video", "audio", "pdf"], output: ["text"] },
+    limit: { context: 1048576, output: 65536 },
+    cost: { input: 3, output: 15, cacheRead: 0.15, inputAudio: 3 },
   },
   "gemini-embedding-001": {
     id: "gemini-embedding-001",
@@ -591,6 +608,7 @@ export const models = {
     lastUpdated: "2026-04-02",
     modalities: { input: ["text", "image"], output: ["text"] },
     limit: { context: 262144, output: 32768 },
+    cost: { input: 0, output: 0 },
   },
   "gemma-4-31b-it": {
     id: "gemma-4-31b-it",
@@ -606,6 +624,7 @@ export const models = {
     lastUpdated: "2026-04-02",
     modalities: { input: ["text", "image"], output: ["text"] },
     limit: { context: 262144, output: 32768 },
+    cost: { input: 0, output: 0 },
   },
   "lyria-3-clip-preview": {
     id: "lyria-3-clip-preview",
@@ -642,7 +661,7 @@ export const models = {
 } as const satisfies Record<string, ModelInfo>;
 
 export type GoogleModelId = keyof typeof models;
-export type GoogleTextModelId = "deep-research-max-preview-04-2026" | "deep-research-preview-04-2026" | "gemini-2.5-computer-use-preview-10-2025" | "gemini-2.5-flash" | "gemini-2.5-flash-image" | "gemini-2.5-flash-lite" | "gemini-2.5-pro" | "gemini-3-flash-preview" | "gemini-3-pro-image" | "gemini-3.1-flash-image" | "gemini-3.1-flash-lite" | "gemini-3.1-flash-lite-image" | "gemini-3.1-flash-lite-preview" | "gemini-3.1-flash-live-preview" | "gemini-3.1-pro-preview" | "gemini-3.1-pro-preview-customtools" | "gemini-3.5-flash" | "gemini-3.5-flash-lite" | "gemini-3.5-live-translate-preview" | "gemini-3.6-flash" | "gemini-3.7-flash" | "gemini-3.8-flash" | "gemini-4-argon" | "gemini-4-carbon" | "gemini-4-hydrogen" | "gemini-embedding-001" | "gemini-embedding-2" | "gemini-flash-latest" | "gemini-flash-lite-latest" | "gemini-pro-latest" | "gemma-4-26b-a4b-it" | "gemma-4-31b-it" | "lyria-3-clip-preview" | "lyria-3-pro-preview";
+export type GoogleTextModelId = "deep-research-max-preview-04-2026" | "deep-research-preview-04-2026" | "gemini-2.5-computer-use-preview-10-2025" | "gemini-2.5-flash" | "gemini-2.5-flash-image" | "gemini-2.5-flash-lite" | "gemini-2.5-pro" | "gemini-3-flash-preview" | "gemini-3-pro-image" | "gemini-3.1-flash-image" | "gemini-3.1-flash-lite" | "gemini-3.1-flash-lite-image" | "gemini-3.1-flash-lite-preview" | "gemini-3.1-flash-live-preview" | "gemini-3.1-pro-preview" | "gemini-3.1-pro-preview-customtools" | "gemini-3.5-flash" | "gemini-3.5-flash-lite" | "gemini-3.5-live-translate-preview" | "gemini-3.6-flash" | "gemini-3.7-flash" | "gemini-3.8-flash" | "gemini-4-argon" | "gemini-4-carbon" | "gemini-4-hydrogen" | "gemini-4-neon" | "gemini-embedding-001" | "gemini-embedding-2" | "gemini-flash-latest" | "gemini-flash-lite-latest" | "gemini-pro-latest" | "gemma-4-26b-a4b-it" | "gemma-4-31b-it" | "lyria-3-clip-preview" | "lyria-3-pro-preview";
 export type GoogleImageModelId = "deep-research-max-preview-04-2026" | "deep-research-preview-04-2026" | "gemini-2.5-flash-image" | "gemini-3-pro-image" | "gemini-3.1-flash-image" | "gemini-3.1-flash-lite-image";
 export type GoogleAudioModelId = "gemini-2.5-flash-preview-tts" | "gemini-2.5-pro-preview-tts" | "gemini-3.1-flash-live-preview" | "gemini-3.1-flash-tts-preview" | "gemini-3.5-live-translate-preview" | "lyria-3-clip-preview" | "lyria-3-pro-preview";
 export type GoogleVideoModelId = "gemini-omni-flash-preview";

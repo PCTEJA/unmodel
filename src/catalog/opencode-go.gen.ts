@@ -160,6 +160,7 @@ export const models = {
     openWeights: true,
     releaseDate: "2026-06-13",
     lastUpdated: "2026-06-13",
+    status: "deprecated",
     modalities: { input: ["text"], output: ["text"] },
     limit: { context: 1000000, output: 131072 },
     cost: { input: 1.4, output: 4.4, cacheRead: 0.26 },
@@ -204,7 +205,7 @@ export const models = {
     reasoning: true,
     toolCall: true,
     structuredOutput: true,
-    temperature: false,
+    temperature: true,
     openWeights: false,
     knowledge: "2026-02-16",
     releaseDate: "2026-07-09",
@@ -221,7 +222,7 @@ export const models = {
     reasoning: true,
     toolCall: true,
     structuredOutput: true,
-    temperature: false,
+    temperature: true,
     openWeights: false,
     knowledge: "2026-05-18",
     releaseDate: "2026-09-22",
@@ -276,6 +277,21 @@ export const models = {
     modalities: { input: ["text", "image"], output: ["text"] },
     limit: { context: 1048576, output: 65536, input: 983010 },
     cost: { input: 0.834, output: 2.501, cacheRead: 0.042 },
+  },
+  "hy4-flash-free": {
+    id: "hy4-flash-free",
+    name: "Hy4 flash Free",
+    family: "Hy",
+    attachment: true,
+    reasoning: true,
+    toolCall: true,
+    temperature: true,
+    openWeights: false,
+    releaseDate: "2026-11-16",
+    lastUpdated: "2026-11-16",
+    modalities: { input: ["text", "image"], output: ["text"] },
+    limit: { context: 1048576, output: 65536, input: 983040 },
+    cost: { input: 0, output: 0, cacheRead: 0 },
   },
   "hy4-preview": {
     id: "hy4-preview",
@@ -335,7 +351,7 @@ export const models = {
     releaseDate: "2026-07-16",
     lastUpdated: "2026-07-16",
     modalities: { input: ["text", "image", "video"], output: ["text"] },
-    limit: { context: 1048576, output: 131072 },
+    limit: { context: 1048576, output: 1048576 },
     cost: { input: 3, output: 15, cacheRead: 0.3, cacheWrite: 3 },
   },
   "kimi-k3.1-pro": {
@@ -351,7 +367,7 @@ export const models = {
     releaseDate: "2026-10-23",
     lastUpdated: "2026-10-23",
     modalities: { input: ["text", "image", "video"], output: ["text"] },
-    limit: { context: 1048576, output: 131072 },
+    limit: { context: 1048576, output: 1048576 },
     cost: { input: 2, output: 10, cacheRead: 0.2, cacheWrite: 2 },
   },
   "longcat-2.0": {
@@ -606,6 +622,22 @@ export const models = {
     limit: { context: 1000000, output: 131072 },
     cost: { input: 2, output: 6, cacheRead: 0.25, cacheWrite: 2.5 },
   },
+  "qwen4-max": {
+    id: "qwen4-max",
+    name: "Qwen4 Max",
+    family: "qwen4-max",
+    attachment: true,
+    reasoning: true,
+    toolCall: true,
+    structuredOutput: true,
+    temperature: true,
+    openWeights: false,
+    releaseDate: "2026-11-16",
+    lastUpdated: "2026-11-16",
+    modalities: { input: ["text", "image", "video"], output: ["text"] },
+    limit: { context: 1000000, output: 262144 },
+    cost: { input: 1.5, output: 4.5, cacheRead: 0.075, cacheWrite: 1.875 },
+  },
   "space-bunny": {
     id: "space-bunny",
     name: "Space Bunny",
@@ -654,7 +686,7 @@ export const models = {
 } as const satisfies Record<string, ModelInfo>;
 
 export type OpencodeGoModelId = keyof typeof models;
-export type OpencodeGoTextModelId = "beam-free" | "cat-jam-free" | "claude-haiku-5-5" | "crouton-alpha-free" | "deepseek-v4-pro" | "deepseek-v4.1-flash" | "gemini-4-argon" | "gemini-4-argon-contributor" | "glm-5.2" | "glm-5.3" | "glm-5.3-flash" | "gpt-5.6-luna" | "gpt-6-luna" | "grok-4.7" | "hy3" | "hy4" | "hy4-preview" | "iceman-contributor-free" | "kimi-k2.7-code" | "kimi-k3" | "kimi-k3.1-pro" | "longcat-2.0" | "longcat-2.5-free" | "longcat-2.5-preview-free" | "mimo-v2.5" | "mimo-v2.5-pro" | "mimo-v2.6-flash" | "mimo-v2.6-pro" | "minimax-m2.7" | "minimax-m3" | "minimax-m3.1-flash" | "minimax-m3.1-flash-free" | "muse-spark-1.2-contributor" | "muse-spark-1.3-contributor" | "qwen3.7-plus" | "qwen3.8-flash" | "qwen3.8-max" | "space-bunny" | "step-5-preview" | "step-5-preview-free";
+export type OpencodeGoTextModelId = "beam-free" | "cat-jam-free" | "claude-haiku-5-5" | "crouton-alpha-free" | "deepseek-v4-pro" | "deepseek-v4.1-flash" | "gemini-4-argon" | "gemini-4-argon-contributor" | "glm-5.2" | "glm-5.3" | "glm-5.3-flash" | "gpt-5.6-luna" | "gpt-6-luna" | "grok-4.7" | "hy3" | "hy4" | "hy4-flash-free" | "hy4-preview" | "iceman-contributor-free" | "kimi-k2.7-code" | "kimi-k3" | "kimi-k3.1-pro" | "longcat-2.0" | "longcat-2.5-free" | "longcat-2.5-preview-free" | "mimo-v2.5" | "mimo-v2.5-pro" | "mimo-v2.6-flash" | "mimo-v2.6-pro" | "minimax-m2.7" | "minimax-m3" | "minimax-m3.1-flash" | "minimax-m3.1-flash-free" | "muse-spark-1.2-contributor" | "muse-spark-1.3-contributor" | "qwen3.7-plus" | "qwen3.8-flash" | "qwen3.8-max" | "qwen4-max" | "space-bunny" | "step-5-preview" | "step-5-preview-free";
 export type OpencodeGoImageModelId = never;
 export type OpencodeGoAudioModelId = never;
 export type OpencodeGoVideoModelId = never;

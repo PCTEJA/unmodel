@@ -1098,7 +1098,7 @@ export const models = {
     lastUpdated: "2026-01-27",
     status: "deprecated",
     modalities: { input: ["text", "image", "video"], output: ["text"] },
-    limit: { context: 128000, output: 262144 },
+    limit: { context: 128000, output: 128000 },
     cost: { input: 0.6, output: 3, cacheRead: 0.1 },
   },
   "novita/kimi-k2.6": {
@@ -1387,7 +1387,7 @@ export const models = {
     lastUpdated: "2025-08-07",
     status: "deprecated",
     modalities: { input: ["text", "image"], output: ["text"] },
-    limit: { context: 128000, output: 16384, input: 272000 },
+    limit: { context: 128000, output: 16384 },
     cost: { input: 1.1, output: 9, cacheRead: 0.11 },
   },
   "openai/gpt-5-codex": {
@@ -1726,13 +1726,13 @@ export const models = {
     reasoning: true,
     toolCall: true,
     structuredOutput: true,
-    temperature: false,
+    temperature: true,
     openWeights: false,
     knowledge: "2025-12-01",
     releaseDate: "2026-04-23",
     lastUpdated: "2026-04-23",
     modalities: { input: ["text", "image"], output: ["text", "image"] },
-    limit: { context: 400000, output: 128000, input: 922000 },
+    limit: { context: 400000, output: 128000 },
     cost: { input: 4.5455, output: 27.2727, cacheRead: 0.4545 },
   },
   "openai/gpt-5.5-pro": {
@@ -1749,7 +1749,7 @@ export const models = {
     releaseDate: "2026-04-23",
     lastUpdated: "2026-04-23",
     modalities: { input: ["text", "image"], output: ["text", "image"] },
-    limit: { context: 400000, output: 128000, input: 922000 },
+    limit: { context: 400000, output: 128000 },
     cost: { input: 27.2727, output: 163.6364 },
   },
   "openai/gpt-image-1": {

@@ -26,7 +26,7 @@ export const models = {
     releaseDate: "2026-07-16",
     lastUpdated: "2026-07-16",
     modalities: { input: ["text", "image", "video"], output: ["text"] },
-    limit: { context: 1048576, output: 131072 },
+    limit: { context: 1048576, output: 1048576 },
     cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
   },
   "k3-256k": {
@@ -42,7 +42,7 @@ export const models = {
     releaseDate: "2026-07-16",
     lastUpdated: "2026-07-16",
     modalities: { input: ["text", "image"], output: ["text"] },
-    limit: { context: 262144, output: 131072 },
+    limit: { context: 262144, output: 262144 },
     cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
   },
   "k3.1-pro": {
@@ -58,7 +58,7 @@ export const models = {
     releaseDate: "2026-10-23",
     lastUpdated: "2026-10-23",
     modalities: { input: ["text", "image", "video"], output: ["text"] },
-    limit: { context: 1048576, output: 131072 },
+    limit: { context: 1048576, output: 1048576 },
     cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
   },
   "k3.1-pro-highspeed": {
@@ -74,7 +74,7 @@ export const models = {
     releaseDate: "2026-10-23",
     lastUpdated: "2026-10-23",
     modalities: { input: ["text", "image", "video"], output: ["text"] },
-    limit: { context: 1048576, output: 131072 },
+    limit: { context: 1048576, output: 1048576 },
     cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
   },
   "kimi-for-coding": {

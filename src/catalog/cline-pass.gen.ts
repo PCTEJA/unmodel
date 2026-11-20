@@ -65,6 +65,23 @@ export const models = {
     limit: { context: 1000000, output: 384000 },
     cost: { input: 0.15, output: 0.6, cacheRead: 0.003 },
   },
+  "cline-pass/deepseek-v4.1-flash-1017": {
+    id: "cline-pass/deepseek-v4.1-flash-1017",
+    name: "DeepSeek V4.1 Flash 1017",
+    family: "deepseek-flash",
+    attachment: true,
+    reasoning: true,
+    toolCall: true,
+    structuredOutput: true,
+    temperature: true,
+    openWeights: true,
+    knowledge: "2025-05",
+    releaseDate: "2026-10-17",
+    lastUpdated: "2026-10-17",
+    modalities: { input: ["text", "image"], output: ["text"] },
+    limit: { context: 1048576, output: 393216 },
+    cost: { input: 0.15, output: 0.6, cacheRead: 0.003 },
+  },
   "cline-pass/glm-5.2": {
     id: "cline-pass/glm-5.2",
     name: "GLM-5.2",
@@ -163,8 +180,24 @@ export const models = {
     releaseDate: "2026-07-16",
     lastUpdated: "2026-07-16",
     modalities: { input: ["text", "image", "video"], output: ["text"] },
-    limit: { context: 1048576, output: 131072 },
+    limit: { context: 1048576, output: 1048576 },
     cost: { input: 3, output: 15, cacheRead: 0.3 },
+  },
+  "cline-pass/kimi-k3.1-pro": {
+    id: "cline-pass/kimi-k3.1-pro",
+    name: "Kimi K3.1 Pro",
+    family: "kimi-k3",
+    attachment: true,
+    reasoning: true,
+    toolCall: true,
+    structuredOutput: true,
+    temperature: false,
+    openWeights: true,
+    releaseDate: "2026-10-23",
+    lastUpdated: "2026-10-23",
+    modalities: { input: ["text", "image", "video"], output: ["text"] },
+    limit: { context: 1048576, output: 943718 },
+    cost: { input: 2, output: 10, cacheRead: 0.2, cacheWrite: 2 },
   },
   "cline-pass/mimo-v2.5": {
     id: "cline-pass/mimo-v2.5",
@@ -178,6 +211,7 @@ export const models = {
     knowledge: "2024-12",
     releaseDate: "2026-04-22",
     lastUpdated: "2026-04-22",
+    status: "deprecated",
     modalities: { input: ["text", "image", "audio", "video"], output: ["text"] },
     limit: { context: 1048576, output: 131072 },
     cost: { input: 0.14, output: 0.28, cacheRead: 0.0028 },
@@ -194,6 +228,7 @@ export const models = {
     knowledge: "2024-12",
     releaseDate: "2026-04-22",
     lastUpdated: "2026-04-22",
+    status: "deprecated",
     modalities: { input: ["text"], output: ["text"] },
     limit: { context: 1048576, output: 131072 },
     cost: { input: 1.74, output: 3.48, cacheRead: 0.0145 },
@@ -242,6 +277,22 @@ export const models = {
     modalities: { input: ["text", "image", "video"], output: ["text"] },
     limit: { context: 1048576, output: 512000 },
     cost: { input: 0.3, output: 1.2, cacheRead: 0.06 },
+  },
+  "cline-pass/minimax-m3.1-flash": {
+    id: "cline-pass/minimax-m3.1-flash",
+    name: "MiniMax-M3.1-Flash",
+    family: "minimax",
+    attachment: true,
+    reasoning: true,
+    toolCall: true,
+    structuredOutput: false,
+    temperature: true,
+    openWeights: true,
+    releaseDate: "2026-10-19",
+    lastUpdated: "2026-10-19",
+    modalities: { input: ["text", "image", "video"], output: ["text"] },
+    limit: { context: 1048576, output: 524288 },
+    cost: { input: 0.15, output: 0.6, cacheRead: 0.015 },
   },
   "cline-pass/muse-spark-1.3-contributor": {
     id: "cline-pass/muse-spark-1.3-contributor",
@@ -309,7 +360,7 @@ export const models = {
 } as const satisfies Record<string, ModelInfo>;
 
 export type ClinePassModelId = keyof typeof models;
-export type ClinePassTextModelId = "cline-pass/deepseek-v4-flash" | "cline-pass/deepseek-v4-pro" | "cline-pass/deepseek-v4.1-flash" | "cline-pass/glm-5.2" | "cline-pass/glm-5.3" | "cline-pass/glm-5.3-flash" | "cline-pass/kimi-k2.6" | "cline-pass/kimi-k2.7-code" | "cline-pass/kimi-k3" | "cline-pass/mimo-v2.5" | "cline-pass/mimo-v2.5-pro" | "cline-pass/mimo-v2.6-flash" | "cline-pass/mimo-v2.6-pro" | "cline-pass/minimax-m3" | "cline-pass/muse-spark-1.3-contributor" | "cline-pass/qwen3.7-max" | "cline-pass/qwen3.7-plus" | "cline-pass/qwen3.8-max";
+export type ClinePassTextModelId = "cline-pass/deepseek-v4-flash" | "cline-pass/deepseek-v4-pro" | "cline-pass/deepseek-v4.1-flash" | "cline-pass/deepseek-v4.1-flash-1017" | "cline-pass/glm-5.2" | "cline-pass/glm-5.3" | "cline-pass/glm-5.3-flash" | "cline-pass/kimi-k2.6" | "cline-pass/kimi-k2.7-code" | "cline-pass/kimi-k3" | "cline-pass/kimi-k3.1-pro" | "cline-pass/mimo-v2.5" | "cline-pass/mimo-v2.5-pro" | "cline-pass/mimo-v2.6-flash" | "cline-pass/mimo-v2.6-pro" | "cline-pass/minimax-m3" | "cline-pass/minimax-m3.1-flash" | "cline-pass/muse-spark-1.3-contributor" | "cline-pass/qwen3.7-max" | "cline-pass/qwen3.7-plus" | "cline-pass/qwen3.8-max";
 export type ClinePassImageModelId = never;
 export type ClinePassAudioModelId = never;
 export type ClinePassVideoModelId = never;

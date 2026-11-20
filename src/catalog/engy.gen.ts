@@ -124,7 +124,7 @@ export const models = {
     openWeights: true,
     releaseDate: "2026-07-16",
     lastUpdated: "2026-07-16",
-    modalities: { input: ["text", "image", "video"], output: ["text"] },
+    modalities: { input: ["text", "image"], output: ["text"] },
     limit: { context: 1113088, output: 65536, input: 1047552 },
     cost: { input: 1.95, output: 9.75, cacheRead: 0.195 },
   },

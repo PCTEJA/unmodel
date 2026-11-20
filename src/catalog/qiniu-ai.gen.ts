@@ -778,7 +778,7 @@ export const models = {
     lastUpdated: "2026-02-06",
     status: "deprecated",
     modalities: { input: ["text"], output: ["text"] },
-    limit: { context: 256000, output: 320000 },
+    limit: { context: 256000, output: 256000 },
     cost: { input: 0, output: 0 },
   },
   "mimo-v2-flash": {
@@ -1293,7 +1293,7 @@ export const models = {
     lastUpdated: "2026-02-13",
     status: "deprecated",
     modalities: { input: ["text"], output: ["text"] },
-    limit: { context: 64000, output: 4096, input: 256000 },
+    limit: { context: 64000, output: 4096 },
   },
   "x-ai/grok-4-fast": {
     id: "x-ai/grok-4-fast",

@@ -315,7 +315,7 @@ export const models = {
     knowledge: "2025-04",
     releaseDate: "2025-09-23",
     lastUpdated: "2025-09-23",
-    modalities: { input: ["text", "image"], output: ["text"] },
+    modalities: { input: ["text", "image", "video"], output: ["text"] },
     limit: { context: 256000, output: 32768 },
     cost: { input: 0.2, output: 1.6, cacheRead: 0.04 },
   },

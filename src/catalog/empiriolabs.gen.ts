@@ -441,40 +441,6 @@ export const models = {
     limit: { context: 1048576, output: 131072 },
     cost: { input: 4.35, output: 8.7, cacheRead: 4.35 },
   },
-  "minimax-m2-7": {
-    id: "minimax-m2-7",
-    name: "MiniMax M2.7",
-    family: "minimax",
-    attachment: false,
-    reasoning: true,
-    toolCall: true,
-    structuredOutput: false,
-    temperature: true,
-    openWeights: true,
-    releaseDate: "2026-03-18",
-    lastUpdated: "2026-03-18",
-    status: "deprecated",
-    modalities: { input: ["text"], output: ["text"] },
-    limit: { context: 204800, output: 131072 },
-    cost: { input: 0.15, output: 0.6, cacheRead: 0.03 },
-  },
-  "minimax-m2-7-highspeed": {
-    id: "minimax-m2-7-highspeed",
-    name: "MiniMax M2.7 Highspeed",
-    family: "minimax",
-    attachment: false,
-    reasoning: true,
-    toolCall: true,
-    structuredOutput: false,
-    temperature: true,
-    openWeights: true,
-    releaseDate: "2026-03-18",
-    lastUpdated: "2026-03-18",
-    status: "deprecated",
-    modalities: { input: ["text"], output: ["text"] },
-    limit: { context: 204800, output: 131072 },
-    cost: { input: 0.3, output: 1.2, cacheRead: 0.03 },
-  },
   "minimax-m3": {
     id: "minimax-m3",
     name: "MiniMax M3",
@@ -798,7 +764,7 @@ export const models = {
     releaseDate: "2026-07-15",
     lastUpdated: "2026-07-15",
     modalities: { input: ["text", "image", "video"], output: ["text"] },
-    limit: { context: 983616, output: 65536, input: 991808 },
+    limit: { context: 983616, output: 65536 },
     cost: { input: 0.03, output: 0.13, cacheRead: 0.006 },
   },
   "qwen3-7-max": {
@@ -913,6 +879,22 @@ export const models = {
     modalities: { input: ["text", "image", "audio", "video"], output: ["text"] },
     limit: { context: 1006592, output: 131072 },
     cost: { input: 0.3, output: 0.94, cacheRead: 0.3 },
+  },
+  "qwen4-max": {
+    id: "qwen4-max",
+    name: "Qwen4 Max",
+    family: "qwen",
+    attachment: true,
+    reasoning: true,
+    toolCall: true,
+    structuredOutput: true,
+    temperature: true,
+    openWeights: false,
+    releaseDate: "2026-11-16",
+    lastUpdated: "2026-11-16",
+    modalities: { input: ["text", "image", "video"], output: ["text"] },
+    limit: { context: 983616, output: 262144 },
+    cost: { input: 1.5, output: 4.5, cacheRead: 0.075 },
   },
   "seed-2-0-code": {
     id: "seed-2-0-code",
@@ -1062,7 +1044,7 @@ export const models = {
 } as const satisfies Record<string, ModelInfo>;
 
 export type EmpiriolabsModelId = keyof typeof models;
-export type EmpiriolabsTextModelId = "deepseek-v4-1-flash-1017" | "deepseek-v4-flash-0731" | "deepseek-v4-pro" | "deepseek-v4-pro-0813" | "fugu-max" | "fugu-ultra-v1-0" | "fugu-ultra-v1-1" | "fugu-ultra-v2-0" | "gemma-3-27b" | "gemma-4-26b-a4b" | "glm-4-5-flash" | "glm-4-6v-flash" | "glm-4-7-flash" | "glm-4-7-flashx" | "glm-5-1" | "glm-5-2" | "glm-5-3" | "glm-5-3-flash" | "kimi-k2-6" | "kimi-k2-7-code" | "kimi-k2-7-code-highspeed" | "kimi-k3" | "kimi-k3-1-pro" | "mimo-v2-6-flash" | "mimo-v2-6-pro" | "mimo-v2-6-pro-ultraspeed" | "minimax-m2-7" | "minimax-m2-7-highspeed" | "minimax-m3" | "minimax-m3-1-flash" | "mistral-small-4" | "muse-glimmer-30b" | "muse-spark-1-1" | "muse-spark-1-2" | "muse-spark-1-3" | "qwen3-5-122b-a10b" | "qwen3-5-27b" | "qwen3-5-35b-a3b" | "qwen3-5-397b-a17b" | "qwen3-5-4b" | "qwen3-5-9b" | "qwen3-5-flash" | "qwen3-5-plus" | "qwen3-6-27b" | "qwen3-6-35b-a3b" | "qwen3-6-flash" | "qwen3-6-plus" | "qwen3-7-flash" | "qwen3-7-max" | "qwen3-7-plus" | "qwen3-8-27b" | "qwen3-8-flash" | "qwen3-8-max" | "qwen3-8-max-0902" | "qwen3-8-omni-flash" | "seed-2-0-code" | "seed-2-0-lite" | "seed-2-0-mini" | "seed-2-0-pro" | "seed-2-1-turbo" | "step-3-5-flash" | "step-3-5-flash-2603" | "step-3-7-flash" | "step-5-preview";
+export type EmpiriolabsTextModelId = "deepseek-v4-1-flash-1017" | "deepseek-v4-flash-0731" | "deepseek-v4-pro" | "deepseek-v4-pro-0813" | "fugu-max" | "fugu-ultra-v1-0" | "fugu-ultra-v1-1" | "fugu-ultra-v2-0" | "gemma-3-27b" | "gemma-4-26b-a4b" | "glm-4-5-flash" | "glm-4-6v-flash" | "glm-4-7-flash" | "glm-4-7-flashx" | "glm-5-1" | "glm-5-2" | "glm-5-3" | "glm-5-3-flash" | "kimi-k2-6" | "kimi-k2-7-code" | "kimi-k2-7-code-highspeed" | "kimi-k3" | "kimi-k3-1-pro" | "mimo-v2-6-flash" | "mimo-v2-6-pro" | "mimo-v2-6-pro-ultraspeed" | "minimax-m3" | "minimax-m3-1-flash" | "mistral-small-4" | "muse-glimmer-30b" | "muse-spark-1-1" | "muse-spark-1-2" | "muse-spark-1-3" | "qwen3-5-122b-a10b" | "qwen3-5-27b" | "qwen3-5-35b-a3b" | "qwen3-5-397b-a17b" | "qwen3-5-4b" | "qwen3-5-9b" | "qwen3-5-flash" | "qwen3-5-plus" | "qwen3-6-27b" | "qwen3-6-35b-a3b" | "qwen3-6-flash" | "qwen3-6-plus" | "qwen3-7-flash" | "qwen3-7-max" | "qwen3-7-plus" | "qwen3-8-27b" | "qwen3-8-flash" | "qwen3-8-max" | "qwen3-8-max-0902" | "qwen3-8-omni-flash" | "qwen4-max" | "seed-2-0-code" | "seed-2-0-lite" | "seed-2-0-mini" | "seed-2-0-pro" | "seed-2-1-turbo" | "step-3-5-flash" | "step-3-5-flash-2603" | "step-3-7-flash" | "step-5-preview";
 export type EmpiriolabsImageModelId = never;
 export type EmpiriolabsAudioModelId = never;
 export type EmpiriolabsVideoModelId = never;

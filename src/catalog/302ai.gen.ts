@@ -103,6 +103,21 @@ export const models = {
     limit: { context: 1048576, output: 512000 },
     cost: { input: 0.72, output: 2.88, cacheRead: 0.144, cacheWrite: 0.9 },
   },
+  "MiniMax-M3.1-Flash": {
+    id: "MiniMax-M3.1-Flash",
+    name: "MiniMax-M3.1-Flash",
+    family: "minimax",
+    attachment: true,
+    reasoning: true,
+    toolCall: true,
+    temperature: true,
+    openWeights: true,
+    releaseDate: "2026-10-19",
+    lastUpdated: "2026-10-19",
+    modalities: { input: ["text", "image", "video"], output: ["text"] },
+    limit: { context: 1000000, output: 512000 },
+    cost: { input: 0.18, output: 0.72, cacheRead: 0.018 },
+  },
   "claude-fable-5": {
     id: "claude-fable-5",
     name: "Claude Fable 5",
@@ -656,7 +671,7 @@ export const models = {
     releaseDate: "2025-11-20",
     lastUpdated: "2025-11-20",
     modalities: { input: ["text", "image"], output: ["text", "image"] },
-    limit: { context: 32768, output: 64000 },
+    limit: { context: 32768, output: 32768 },
     cost: { input: 2, output: 120 },
   },
   "gemini-3-pro-preview": {
@@ -1329,7 +1344,7 @@ export const models = {
     reasoning: true,
     toolCall: true,
     structuredOutput: true,
-    temperature: false,
+    temperature: true,
     openWeights: false,
     knowledge: "2025-12-01",
     releaseDate: "2026-04-23",
@@ -1346,7 +1361,7 @@ export const models = {
     reasoning: true,
     toolCall: true,
     structuredOutput: true,
-    temperature: false,
+    temperature: true,
     openWeights: false,
     knowledge: "2026-02-16",
     releaseDate: "2026-07-09",
@@ -1363,7 +1378,7 @@ export const models = {
     reasoning: true,
     toolCall: true,
     structuredOutput: true,
-    temperature: false,
+    temperature: true,
     openWeights: false,
     knowledge: "2026-02-16",
     releaseDate: "2026-07-09",
@@ -1380,7 +1395,7 @@ export const models = {
     reasoning: true,
     toolCall: true,
     structuredOutput: true,
-    temperature: false,
+    temperature: true,
     openWeights: false,
     knowledge: "2026-02-16",
     releaseDate: "2026-07-09",
@@ -1397,7 +1412,7 @@ export const models = {
     reasoning: true,
     toolCall: true,
     structuredOutput: true,
-    temperature: false,
+    temperature: true,
     openWeights: false,
     knowledge: "2026-02-16",
     releaseDate: "2026-07-09",
@@ -1414,7 +1429,7 @@ export const models = {
     reasoning: true,
     toolCall: true,
     structuredOutput: true,
-    temperature: false,
+    temperature: true,
     openWeights: false,
     knowledge: "2026-02-16",
     releaseDate: "2026-07-09",
@@ -1431,7 +1446,7 @@ export const models = {
     reasoning: true,
     toolCall: true,
     structuredOutput: true,
-    temperature: false,
+    temperature: true,
     openWeights: false,
     knowledge: "2026-02-16",
     releaseDate: "2026-07-09",
@@ -1465,7 +1480,7 @@ export const models = {
     reasoning: true,
     toolCall: true,
     structuredOutput: true,
-    temperature: false,
+    temperature: true,
     openWeights: false,
     knowledge: "2026-05-18",
     releaseDate: "2026-09-22",
@@ -1482,7 +1497,7 @@ export const models = {
     reasoning: true,
     toolCall: true,
     structuredOutput: true,
-    temperature: false,
+    temperature: true,
     openWeights: false,
     knowledge: "2026-04-20",
     releaseDate: "2026-09-22",
@@ -1748,7 +1763,7 @@ export const models = {
     releaseDate: "2026-07-16",
     lastUpdated: "2026-07-16",
     modalities: { input: ["text", "image", "video"], output: ["text"] },
-    limit: { context: 1048576, output: 131072 },
+    limit: { context: 1048576, output: 1048576 },
     cost: { input: 3, output: 15, cacheRead: 0.3 },
   },
   "kimi-k3.1-pro": {
@@ -1764,7 +1779,7 @@ export const models = {
     releaseDate: "2026-10-23",
     lastUpdated: "2026-10-23",
     modalities: { input: ["text", "image", "video"], output: ["text"] },
-    limit: { context: 1048576, output: 131072 },
+    limit: { context: 1048576, output: 1048576 },
     cost: { input: 2.4, output: 12, cacheRead: 0.24 },
   },
   "ministral-14b-2512": {
@@ -1796,7 +1811,7 @@ export const models = {
     releaseDate: "2025-12-02",
     lastUpdated: "2025-12-02",
     modalities: { input: ["text", "image"], output: ["text"] },
-    limit: { context: 128000, output: 262144 },
+    limit: { context: 128000, output: 128000 },
     cost: { input: 1.1, output: 3.3 },
   },
   "o3": {
@@ -2056,7 +2071,7 @@ export const models = {
 } as const satisfies Record<string, ModelInfo>;
 
 export type _302aiModelId = keyof typeof models;
-export type _302aiTextModelId = "MiniMax-M1" | "MiniMax-M2" | "MiniMax-M2.1" | "MiniMax-M2.5" | "MiniMax-M2.7" | "MiniMax-M3" | "claude-fable-5" | "claude-fable-5-1" | "claude-haiku-4-5" | "claude-haiku-4-5-20251001" | "claude-haiku-5-5" | "claude-opus-4-1-20250805" | "claude-opus-4-1-20250805-thinking" | "claude-opus-4-5-20251101" | "claude-opus-4-7" | "claude-opus-4-7-thinking" | "claude-opus-4-8" | "claude-opus-5" | "claude-opus-5-5" | "claude-opus-5-thinking" | "claude-sonnet-4-5-20250929" | "claude-sonnet-4-5-20250929-thinking" | "claude-sonnet-4-6" | "claude-sonnet-4-6-thinking" | "claude-sonnet-5" | "claude-sonnet-5-5" | "deepseek-flash" | "deepseek-v3.2" | "deepseek-v3.2-thinking" | "doubao-seed-1-6-thinking-250715" | "doubao-seed-1-6-vision-250815" | "doubao-seed-1-8-251215" | "gemini-2.0-flash-lite" | "gemini-2.5-flash" | "gemini-2.5-flash-image" | "gemini-2.5-flash-lite-preview-09-2025" | "gemini-2.5-flash-nothink" | "gemini-2.5-flash-preview-09-2025" | "gemini-2.5-pro" | "gemini-3-flash-preview" | "gemini-3-pro-image-preview" | "gemini-3-pro-preview" | "gemini-3.1-flash-image-preview" | "gemini-3.1-flash-lite" | "gemini-3.1-flash-lite-preview" | "gemini-3.1-pro-preview" | "gemini-3.5-flash" | "gemini-3.5-flash-lite" | "gemini-3.5-flash-thinking" | "gemini-3.6-flash" | "gemini-3.7-flash" | "gemini-3.8-flash" | "gemini-4-argon" | "glm-4.5" | "glm-4.5v" | "glm-4.6" | "glm-4.6v" | "glm-4.7" | "glm-5" | "glm-5-turbo" | "glm-5.1" | "glm-5.2" | "glm-5.3" | "glm-5.3-flash" | "glm-5v-turbo" | "gpt-4.1" | "gpt-4.1-mini" | "gpt-4.1-nano" | "gpt-4o" | "gpt-5" | "gpt-5-mini" | "gpt-5-pro" | "gpt-5-thinking" | "gpt-5.1" | "gpt-5.1-chat-latest" | "gpt-5.2" | "gpt-5.2-chat-latest" | "gpt-5.3-chat-latest" | "gpt-5.4" | "gpt-5.4-mini" | "gpt-5.4-nano" | "gpt-5.5" | "gpt-5.6-luna" | "gpt-5.6-luna-pro" | "gpt-5.6-sol" | "gpt-5.6-sol-pro" | "gpt-5.6-terra" | "gpt-5.6-terra-pro" | "gpt-6-astra" | "gpt-6-luna" | "gpt-6-sol" | "gpt-6.1-sol" | "grok-4-1-fast-reasoning" | "grok-4-fast-non-reasoning" | "grok-4-fast-reasoning" | "grok-4.1" | "grok-4.20-beta-0309-reasoning" | "grok-4.3" | "grok-4.5" | "grok-4.6" | "grok-4.7" | "kimi-k2-0905-preview" | "kimi-k2-thinking" | "kimi-k2.5" | "kimi-k2.6" | "kimi-k2.7-code" | "kimi-k3" | "kimi-k3.1-pro" | "ministral-14b-2512" | "mistral-large-2512" | "o3" | "qwen3-235b-a22b" | "qwen3-235b-a22b-instruct-2507" | "qwen3-30b-a3b" | "qwen3-coder-480b-a35b-instruct" | "qwen3-max-2025-09-23" | "qwen3.5-35b-a3b" | "qwen3.5-plus" | "qwen3.6-35b-a3b" | "qwen3.6-flash" | "qwen3.6-plus" | "qwen3.7-max" | "qwen3.7-max-2026-06-08" | "qwen3.7-plus" | "qwen3.8-flash" | "qwen3.8-max";
+export type _302aiTextModelId = "MiniMax-M1" | "MiniMax-M2" | "MiniMax-M2.1" | "MiniMax-M2.5" | "MiniMax-M2.7" | "MiniMax-M3" | "MiniMax-M3.1-Flash" | "claude-fable-5" | "claude-fable-5-1" | "claude-haiku-4-5" | "claude-haiku-4-5-20251001" | "claude-haiku-5-5" | "claude-opus-4-1-20250805" | "claude-opus-4-1-20250805-thinking" | "claude-opus-4-5-20251101" | "claude-opus-4-7" | "claude-opus-4-7-thinking" | "claude-opus-4-8" | "claude-opus-5" | "claude-opus-5-5" | "claude-opus-5-thinking" | "claude-sonnet-4-5-20250929" | "claude-sonnet-4-5-20250929-thinking" | "claude-sonnet-4-6" | "claude-sonnet-4-6-thinking" | "claude-sonnet-5" | "claude-sonnet-5-5" | "deepseek-flash" | "deepseek-v3.2" | "deepseek-v3.2-thinking" | "doubao-seed-1-6-thinking-250715" | "doubao-seed-1-6-vision-250815" | "doubao-seed-1-8-251215" | "gemini-2.0-flash-lite" | "gemini-2.5-flash" | "gemini-2.5-flash-image" | "gemini-2.5-flash-lite-preview-09-2025" | "gemini-2.5-flash-nothink" | "gemini-2.5-flash-preview-09-2025" | "gemini-2.5-pro" | "gemini-3-flash-preview" | "gemini-3-pro-image-preview" | "gemini-3-pro-preview" | "gemini-3.1-flash-image-preview" | "gemini-3.1-flash-lite" | "gemini-3.1-flash-lite-preview" | "gemini-3.1-pro-preview" | "gemini-3.5-flash" | "gemini-3.5-flash-lite" | "gemini-3.5-flash-thinking" | "gemini-3.6-flash" | "gemini-3.7-flash" | "gemini-3.8-flash" | "gemini-4-argon" | "glm-4.5" | "glm-4.5v" | "glm-4.6" | "glm-4.6v" | "glm-4.7" | "glm-5" | "glm-5-turbo" | "glm-5.1" | "glm-5.2" | "glm-5.3" | "glm-5.3-flash" | "glm-5v-turbo" | "gpt-4.1" | "gpt-4.1-mini" | "gpt-4.1-nano" | "gpt-4o" | "gpt-5" | "gpt-5-mini" | "gpt-5-pro" | "gpt-5-thinking" | "gpt-5.1" | "gpt-5.1-chat-latest" | "gpt-5.2" | "gpt-5.2-chat-latest" | "gpt-5.3-chat-latest" | "gpt-5.4" | "gpt-5.4-mini" | "gpt-5.4-nano" | "gpt-5.5" | "gpt-5.6-luna" | "gpt-5.6-luna-pro" | "gpt-5.6-sol" | "gpt-5.6-sol-pro" | "gpt-5.6-terra" | "gpt-5.6-terra-pro" | "gpt-6-astra" | "gpt-6-luna" | "gpt-6-sol" | "gpt-6.1-sol" | "grok-4-1-fast-reasoning" | "grok-4-fast-non-reasoning" | "grok-4-fast-reasoning" | "grok-4.1" | "grok-4.20-beta-0309-reasoning" | "grok-4.3" | "grok-4.5" | "grok-4.6" | "grok-4.7" | "kimi-k2-0905-preview" | "kimi-k2-thinking" | "kimi-k2.5" | "kimi-k2.6" | "kimi-k2.7-code" | "kimi-k3" | "kimi-k3.1-pro" | "ministral-14b-2512" | "mistral-large-2512" | "o3" | "qwen3-235b-a22b" | "qwen3-235b-a22b-instruct-2507" | "qwen3-30b-a3b" | "qwen3-coder-480b-a35b-instruct" | "qwen3-max-2025-09-23" | "qwen3.5-35b-a3b" | "qwen3.5-plus" | "qwen3.6-35b-a3b" | "qwen3.6-flash" | "qwen3.6-plus" | "qwen3.7-max" | "qwen3.7-max-2026-06-08" | "qwen3.7-plus" | "qwen3.8-flash" | "qwen3.8-max";
 export type _302aiImageModelId = "gemini-2.5-flash-image" | "gemini-3-pro-image-preview" | "gemini-3.1-flash-image-preview";
 export type _302aiAudioModelId = never;
 export type _302aiVideoModelId = never;
